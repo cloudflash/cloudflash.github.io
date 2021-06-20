@@ -1,0 +1,300 @@
+<!--源码你都看了
+还不前往https://www.scratch-cn.cn/project?comid=5f1d3334a3fa861604b184ed
+或者https://www.aerfaying.com/Projects/540348
+加个鸡腿/点个赞或打赏支持一下
+微信公众号：云闪之家
+关注一下吧-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>云闪のblog</title> 
+<link href="1597907605386dc4cf9a7.ico" rel="shortcut icon"/>
+ <style>  @keyframes typing {
+    from { width: 0}
+}
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+ 
+.typeing {
+    font: 200% monospace;
+    font-size: 15px;
+    font-family: "楷体";
+    border-right: .08em solid;
+    width: 100ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end),
+               blink-caret .5s step-end infinite alternate; //这里的alternate是为了让光标闪烁的正常一点
+}</style>
+    <style id="css">
+        #wrap{width:200px; height:200px; border:2px solid #000; margin:100px auto;border-radius:50%; position:relative;}
+        #wrap ul{margin:0; padding:0; height:200px; position:relative; list-style:none;}
+        #wrap ul li{width:2px;  height:6px; background:#000; position:absolute; left:99px; top: 0;-webkit-transform-origin:center 100px;}
+        /*#wrap ul li:nth-of-type(1){-webkit-transform: rotate(0);}
+        #wrap ul li:nth-of-type(2){-webkit-transform: rotate(6deg);}
+        #wrap ul li:nth-of-type(3){-webkit-transform: rotate(12deg);}
+        #wrap ul li:nth-of-type(4){-webkit-transform: rotate(18deg);}
+        #wrap ul li:nth-of-type(5){-webkit-transform: rotate(24deg);}
+        #wrap ul li:nth-of-type(6){-webkit-transform: rotate(30deg);}
+        #wrap ul li:nth-of-type(7){-webkit-transform: rotate(36deg);}
+        #wrap ul li:nth-of-type(8){-webkit-transform: rotate(42deg);}*/
+        #wrap ul li:nth-of-type(5n+1){ height:12px;}
+        #hour{width:6px;  height:45px; background:#000; position:absolute; left:97px; top:55px;-webkit-transform-origin:bottom ;}
+        #min{width:4px;  height:65px; background:#999; position:absolute; left:98px; top:35px;-webkit-transform-origin:bottom ;}
+        #sec{width:2px;  height:80px; background:red; position:absolute; left:99px; top:20px;-webkit-transform-origin:bottom ;}
+        .icon{width:20px; height:20px; background:#000; border-radius:50%; position:absolute; left:90px; top: 90px;}
+ 
+    </style>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+    .clear{
+        clear:both;
+    }
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+.header {
+    background-color:#787F87;
+    color:white;
+    height:100%;
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+    width:100%;
+
+}
+.headtop{
+    float: none;
+    width:110px;
+    height:20px;
+  
+    background-color: aliceblue;}
+.headerleft{
+    float: left;
+    width:300px;
+    height: auto;
+    display:block;
+    background-color:gray; 
+    }
+    .headermiddle{
+        float: left;
+        width:500px;
+        height:auto;
+        background-color:gray;
+        
+    }
+.headerright{
+    float: left;
+    width:300px;
+    background-color: gray;
+    }
+.footer {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    width:100%;
+    position:fixed;
+    bottom: 0;
+}
+.centre{
+        text-align: center;
+        background-color:white;
+        padding: 10px;height: 100px;
+    float: right;
+    }
+.topmenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #777;
+}
+.topmenu li {
+    float: left;
+}
+.topmenu li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+.topmenu li a:hover {
+    background-color: #222;
+}
+.topmenu li a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+.column {
+    float: left;
+    height:675px;
+    padding: 15px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.sidemenu {
+    width: 25%;
+}
+.content {
+    width: 75%;
+}
+.side{
+        width:100%;
+        height:250px; 
+    }
+.sidemenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+.sidemenu li a {
+    margin-bottom: 4px;
+    display: block;
+    padding: 8px;
+    background-color: #eee;
+    text-decoration: none;
+    color: #666;
+}
+.sidemenu li a:hover {
+    background-color: #555;
+    color: white;
+}
+.sidemenu li a.active {
+    background-color: #008CBA;
+    color: white;
+}
+</style>
+</head>
+<body>
+    <script type="text/javascript" src="me.js" ></script>
+<ul class="topmenu">
+  <li><a href="#home" class="active">Home</a></li>
+  <li><a href="book.html">悠哉生活</a></li>
+  <li><a href="think.html">思考</a></li>
+  <li><a href="https://blog.csdn.net/qq_41722524">我のCSDN</a></li>
+  <li><a href="me.html">关于我</a></li>
+</ul>
+
+<div class="clearfix">
+  <div class="column sidemenu">
+    <ul>
+      <li><a href="solar.html" style="background:#14CEEB "><strong>点进去可以看到太阳系哦</strong></a></li>
+      <li><a href="" class="active"><b>我的博客</b></a></li>
+      <li><a href="https://www.aerfaying.com/Users/1160968"><b>我的A营主页</b></a></li>
+      <li><a href="https://www.aerfaying.com/Projects/548898"><b>冲云破雾Beta2</b></a></li>
+      <li><a href="http://21709820.s21d-21.faiusrd.com/0/8/ABUIABAAGAAgm8Hf_wUomJSGngc?f=%E6%B2%B3%E8%BE%B9%E4%B9%8B%E6%88%983D.sb3&v=1601691803"><b>下载测试1</b></a></li>
+      <li><a href="王者荣耀2.80 (1).sb3" download="王者荣耀2.80 (1).sb3"><b>下载测试2</b></a></li>
+      <li><a href="https://assets.baklib.com/t/1b852d8b-b95e-4c13-a9ea-544738b2cc5f/u/7022a1d6-b72f-4566-aa87-a8be9feede38/Flip%203D1605788995664.sb3"><b>下载测试最佳</b></a></li>
+    </ul>   
+    <div class="side">    <div id="wrap">
+    <ul id="list">
+        <!--<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>-->
+    </ul>
+        <div id="hour"></div>
+        <div id="min"></div>
+        <div id="sec"></div>
+        <div class="icon"></div>
+    </div>
+       <script>
+        var oList=document.getElementById("list");//获取到刻度
+        var oCss=document.getElementById("css");
+        var oHour=document.getElementById("hour");//获取时针
+        var oMin=document.getElementById("min");//获取分针
+        var oSec=document.getElementById("sec");//获取秒针
+        var oLi="";
+        var sCss="";
+        for (var i=0;i<60;i++) { //一个表盘总共是60个刻度
+            sCss+="#wrap ul li:nth-of-type("+(i+1)+"){-webkit-transform: rotate("+i*6+"deg);}";
+            oLi+="<li></li>";
+        };
+        oList.innerHTML=oLi;
+        oCss.innerHTML+=sCss;//表盘刻度渲染完成
+        toTime();
+        setInterval(toTime,1000);
+        function toTime(){
+            var oDate=new Date();//获取当前时间
+            var iSec=oDate.getSeconds();//获取当前秒
+            var iMin=oDate.getMinutes()+iSec/60;//获取当前分
+            var iHour=oDate.getHours()+iMin/60;//获取当前时
+            oSec.style.WebkitTransform="rotate("+iSec*6+"deg)";//秒针转动角度1秒6度 (表盘一圈360度一圈60秒所以一秒6度)
+            oMin.style.WebkitTransform="rotate("+iMin*6+"deg)";//分钟转动角度1分6度 (表盘一圈360度一圈60分所以一分6度)
+            oHour.style.WebkitTransform="rotate("+iHour*30+"deg)";//时针转动角度一小时30度(表盘一圈360度一圈12小时所以一小时30度)
+        };
+</script>
+</div>
+  </div>
+
+  <div class="column content">
+      <div class="header"> 
+          <br><br>
+        <div class="headerleft"></div>
+        <div class="headermiddle"></div>
+        <div class="headerright"></div>
+          <div class="clear"></div>
+          <br><br><br>
+           <img src="tyre的.png">
+          <br><br><br><br><br><br>
+          <h2 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif'" >
+             我时常回到童年，用一片童心来思考问题，很多烦恼的问题就变得易解。<br><br></h2>
+        <h3 style="text-align: right">即将全部开发完成————云闪Scratch博客[中秋&国庆快乐！]&nbsp; </h3>
+  </div>
+</div>  
+</div>
+    
+    <div class="centre">  <p class="typeing" >Whatever your past has been, you have a spotless future🚀.</p></div>
+<br> 
+<div class="footer" style="text-align: center">  
+<a href="https://github.com/cloudflash"> <button class="button">github</button></a>
+<button class="button button2">❤❤❤</button>
+<button class="button button3">❤❤❤</button>
+<button class="button button4">😄</button>
+<button class="button button4">😁</button>
+
+<button class="button button4">😊</button>
+     <strong>Travis's homepage</strong>
+<button class="button button5">😁</button>
+
+<button class="button button5">😎</button>
+ <button class="button button6">🤭</button>
+<button class="button">❤❤❤</button>
+<button class="button button2">❤❤❤</button>
+<button class="button button3">❤❤❤</button>
+
+</div>
+
+</body>
+</html>
